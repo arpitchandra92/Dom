@@ -22,6 +22,21 @@ function uploade()
     var node = document.createElement("LI");                 // Create a <li> node
 var textnode = document.createTextNode(x);         // Create a text node
 node.appendChild(textnode);  
+// node.style.color = "white";
+// node.style.borderBottom = "solid";
+// node.style.backgroundColor = "blue";
+var items = document.getElementsByClassName("list-group-item");
+var li = document.querySelectorAll("li:nth-child(odd)");
+for(var i=0;i<li.length;i++)
+{
+    li[i].style.backgroundColor = "#f4f4f4";
+}
+// for(var i =0;i<items.length;i++)
+// {
+
+//     items[i].style.color = "white";
+//     items[i].style.backgroundColor = "blue";
+// }
 node.classList.add("list-group-item");
     document.getElementById('items').appendChild(node);
     // console.log(y.innerHTML);
