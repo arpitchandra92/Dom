@@ -189,7 +189,34 @@ const Domagic = function(fun,time) {
 
 const betterFunction = Domagic(getdata,1000)
 
+function callapplybind()
+{
+    let name1 = {
+        firstname :"Arpit",
+        lastname: "Chandra",
+        
 
+
+    }
+    let printfullname = function(hometow,state){
+        console.log(this.firstname+" "+this.lastname+" is from "+hometow+","+state);
+    }
+    let name2 = {
+        firstname :"Mesut",
+        lastname: "Ozil",
+        // printfullname : function(){
+        //     console.log(this.firstname+" "+this.lastname);
+        // }
+
+
+    }
+    printfullname.call(name1,"Kanpur","UP");
+    printfullname.apply(name2, ["Somewhere in Turkey","Tuks"]);
+
+    let binding = printfullname.bind(name1,"Kanpur","UP");
+    binding();
+
+}
 
 // myFunction();
 // document.all[10].textContent = "YESSSSSSSSSSSS";
