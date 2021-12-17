@@ -112,38 +112,59 @@ function uploade()
 
 // }
 //Obect, how to get keys, value, max and min, filter and how to create an object
-function strcount(){
-    function count(str) {
-        const object = {};
-        for(let letter of str)
-        {
-          if(object[letter])
-          {
-              object[letter]++;
+// function strcount(){
+//     function count(str) {
+//         const object = {};
+//         for(let letter of str)
+//         {
+//           if(object[letter])
+//           {
+//               object[letter]++;
       
-          }
-          else{
-            object[letter] =1;
-          }
-        } 
-        console.log(object);
-        let arr = Object.values(object);
-        console.log(arr);
-        let max = Math.max(...arr);
-        console.log(max);
-        let finalarr = Object.keys(object)
-        console.log(finalarr);
-        let result = finalarr.filter(k => object[k]==max);
-        return result
-          // your code here
-      }
-      let x =count('abbcccddd');
-      console.log(x);
+//           }
+//           else{
+//             object[letter] =1;
+//           }
+//         } 
+//         console.log(object);
+//         let arr = Object.values(object);
+//         console.log(arr);
+//         let max = Math.max(...arr);
+//         console.log(max);
+//         let finalarr = Object.keys(object)
+//         console.log(finalarr);
+//         let result = finalarr.filter(k => object[k]==max);
+//         return result
+//           // your code here
+//       }
+//       let x =count('abbcccddd');
+//       console.log(x);
 
 
+// }
+
+//Returning a function from a function call, once you get you increment counter 
+
+function counterfunc()
+{
+    function createCounter()
+    {
+        let counter =-1;
+        return {
+            get count(){
+                counter++;
+                console.log(counter);
+                return counter;
+            }
+        }
+    }
+    const counter = createCounter()
+counter.count // 0, then it should increment
+counter.count // 1
+counter.count // 2
+counter.count = 100 // it cannot be altered
+counter.count // 3
 }
-
-
 
 
 // myFunction();
