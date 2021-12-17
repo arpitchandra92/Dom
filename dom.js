@@ -145,26 +145,50 @@ function uploade()
 
 //Returning a function from a function call, once you get you increment counter 
 
-function counterfunc()
-{
-    function createCounter()
-    {
-        let counter =-1;
-        return {
-            get count(){
-                counter++;
-                console.log(counter);
-                return counter;
-            }
-        }
-    }
-    const counter = createCounter()
-counter.count // 0, then it should increment
-counter.count // 1
-counter.count // 2
-counter.count = 100 // it cannot be altered
-counter.count // 3
+// function counterfunc()
+// {
+//     function createCounter()
+//     {
+//         let counter =-1;
+//         return {
+//             get count(){
+//                 counter++;
+//                 console.log(counter);
+//                 return counter;
+//             }
+//         }
+//     }
+//     const counter = createCounter()
+// counter.count // 0, then it should increment
+// counter.count // 1
+// counter.count // 2
+// counter.count = 100 // it cannot be altered
+// counter.count // 3
+// }
+
+let counter=0;
+const getdata = () =>{
+    console.log("You're first keyup "+counter++);
+
 }
+
+const Domagic = function(fun,time) {
+    let timer;
+    return function() {
+        let context = this;
+        let args = arguments;
+        clearTimeout(timer);
+        timer = setTimeout(()=>{
+            getdata.apply(context,args);
+
+        },time);
+
+
+    }
+}
+
+const betterFunction = Domagic(getdata,1000)
+
 
 
 // myFunction();
