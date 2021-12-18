@@ -8,36 +8,36 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="dom.js"></script>
+<script src="search.js"></script>
     </head>
     <body onload="callapplybind()">
         <header id="main-header" class="bg-success text-white p-4 mb-3">
 
             <div class="container">
-                <h1 id="header-title">Item-Listener</h1>
+                <h1 id="header-title">Search Feature</h1>
             </div>
         
         </header>
         <div class="container">
         <div id="main" class="card card-body">
-            <h2 class="title">Add Items</h2>
+            <h2 class="title"></h2>
 
-        <input type="text" onkeyup = "betterFunction()" id="input" class="form-control mr-2">
-        <button id ="button1">Submit</button>
+        <input type="text" onkeyup = "betterFunction(this)" id="input" class="form-control mr-2">
+
         
-        <form id= "myForm" class="form-inline mb3">
-        <input type="text" class="form-control mr-2">
-        <input type="submit" class="btn btn-dark" value="Submit">
-            </form>
-            <h2 class="title">Items</h2>
-            <ul id="items" class="list-group">
+        <ul id="items" class="list-group">
         <li class="list-group-item">Item 1</li>
         <li class="list-group-item">Item 2</li>
         <li class="list-group-item">Item 3</li>
         <li class="list-group-item">Item 4</li>
         
             </ul>
+            
         </div>
+        <div>Total number of pages:
+            <div id="pageno"></div>
+        </div>
+        <span><button onclick="previous()">previous</button><button onclick="next()">next</button></span>
         
         </div>
 
