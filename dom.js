@@ -216,6 +216,19 @@ function callapplybind()
     let binding = printfullname.bind(name1,"Kanpur","UP");
     binding();
 
+    Function.prototype.mybind = (...args) =>{
+        console.log(this);
+
+        let obj = this;
+        return function(){
+            obj.call(args[0]);
+        }
+
+    }
+
+    let myb = printfullname.mybind(name1);
+    myb();
+
 }
 
 // myFunction();
